@@ -1,0 +1,33 @@
+<div class="page-login container">
+
+  <img src="./assets/icons/icon-grego.png" alt="grego-logo">
+
+  <h1>Acesso ao sistema</h1>
+
+  <form [formGroup]="loginform">
+
+    <mat-form-field appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="document" placeholder="CPF" mask="CPF_CNPJ">
+      <mat-error *ngIf="loginform.controls.document.hasError('required')">CPF é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Senha">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="loginform.controls.password.hasError('required')">Senha é obrigatório</mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button type="button" color="primary" (click)="onSubmit()" class="button">Entrar</button>
+
+    <p>Não tem ainda uma conta?</p>
+
+    <button mat-flat-button routerLink="/register" type="button" color="primary" class="button">Criar agora mesmo</button>
+
+  </form>
+
+</div>

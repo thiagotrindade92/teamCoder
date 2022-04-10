@@ -1,0 +1,65 @@
+<div class="page-address-company container">
+
+  <div class="wrapper-icon">
+    <img src="./assets/icons/icon-grego-2.png" alt="Menu Grego">
+    <span>Criar Cardápio</span>>
+  </div>
+
+  <h1>Endereço do seu estabelecimento</h1>
+
+  <form [formGroup]="formAddressCompany">
+
+    <mat-form-field appearance="outline">
+      <mat-label>CEP</mat-label>
+      <input matInput formControlName="postCode" mask="00000-000" placeholder="CEP">
+      <mat-error *ngIf="formAddressCompany.controls.postCode.hasError('required')">CEP é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Endereço</mat-label>
+      <input matInput formControlName="address" placeholder="Endereço">
+      <mat-error *ngIf="formAddressCompany.controls.address.hasError('required')">Endereço é obrigatório</mat-error>
+    </mat-form-field>
+
+    <div class="container-group">
+      <div class="group">
+        <mat-form-field appearance="outline">
+          <mat-label>Número</mat-label>
+          <input matInput formControlName="number" mask="00000" placeholder="Número">
+          <mat-error *ngIf="formAddressCompany.controls.number.hasError('required')">Número é obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="group">
+        <mat-form-field appearance="outline">
+          <mat-label>complemento</mat-label>
+          <input matInput formControlName="complement" placeholder="complemento">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Bairro</mat-label>
+      <input matInput formControlName="district" placeholder="Bairro">
+      <mat-error *ngIf="formAddressCompany.controls.district.hasError('required')">Bairro é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cidade</mat-label>
+      <input matInput formControlName="city" placeholder="Estado">
+      <mat-error *ngIf="formAddressCompany.controls.city.hasError('required')">Cidade é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <input matInput formControlName="states" placeholder="Estado">
+      <mat-error *ngIf="formAddressCompany.controls.states.hasError('required')">Estado é obrigatório</mat-error>
+    </mat-form-field>
+
+    <div class="wrapper-button">
+      <button mat-flat-button class="button" type="button" (click)="back()">Volta</button>
+      <button mat-flat-button class="button" type="button" color="primary" (click)="onSubmit()">Finalizar</button>
+    </div>
+
+  </form>
+</div>

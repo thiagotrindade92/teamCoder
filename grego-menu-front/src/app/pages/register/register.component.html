@@ -1,0 +1,54 @@
+<div class="page-register container">
+
+  <div class="wrapper-icon">
+    <img src="./assets/icons/icon-grego-2.png" alt="Menu Grego">
+    <span>Criar Cardápio</span>
+  </div>
+
+  <h1>Dados Pessoais</h1>
+
+  <form [formGroup]="formRegister">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do Prorietário</mat-label>
+      <input matInput formControlName="name" placeholder="Nome">
+      <mat-error *ngIf="formRegister.controls.name.hasError('required')">Nome é obrigatório</mat-error>
+      <mat-error *ngIf="formRegister.controls.name.hasError('minlength')"> Digite pelo menos 3 caracteres.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="document" mask="000.000.000-00" placeholder="CPF">
+      <mat-error *ngIf="formRegister.controls.document.hasError('required')">CPF é obrigatório</mat-error>
+      <!-- <mat-error>Seu CPF não está correto.</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Celular / Whatsapp</mat-label>
+      <input matInput formControlName="phone" mask="(00) 00000-0000" placeholder="Celular">
+      <mat-error *ngIf="formRegister.controls.phone.hasError('required')">Celular é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="email" type="email" matInput placeholder="nome@example.com">
+      <mat-error *ngIf="formRegister.controls.email.hasError('required')">E-mail é obrigatório</mat-error>
+      <mat-error *ngIf="formRegister.controls.email.hasError('email')">Digite um email valido.</mat-error>
+    </mat-form-field>
+
+    <div class="wrapper-checkbox">
+      <section>
+        <mat-checkbox>Aceito receber comunicação do Menu Grego sobre meu cardápio por e-mail.</mat-checkbox>
+      </section>
+      <section>
+        <mat-checkbox>Aceito receber comunicação do Menu Grego sobre meu cardápio por Whatsapp. </mat-checkbox>
+      </section>
+      <section>
+        <mat-checkbox>Aceito receber sugestões de produtos e serviços da Menu Grego para meu negócio.</mat-checkbox>
+      </section>
+    </div>
+
+    <button mat-flat-button type="button" class="button" color="primary" (click)="onSubmit()">Próximo</button>
+  </form>
+
+</div>

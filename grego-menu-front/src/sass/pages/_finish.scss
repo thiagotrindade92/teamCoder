@@ -1,0 +1,19 @@
+.page-finish {
+    h1 {
+        font-family: 'Salsa', cursive;
+        font-size: 20px;
+        font-weight: 400;
+        color: $color-primary;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    p {
+        font-family: 'Roboto', cursive;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        color: $color-base;
+        margin-bottom: 16px;
+        padding: 0px 20px;
+    }      
+}

@@ -1,0 +1,32 @@
+<div class="page-company container">
+
+  <div class="wrapper-icon">
+    <img src="./assets/icons/icon-grego-2.png" alt="Menu Grego">
+    <span>Criar Cardápio</span>
+  </div>
+
+  <h1>Dados da empresa</h1>
+
+  <form [formGroup]="formCompany">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do seu negócio</mat-label>
+      <input matInput formControlName="name" placeholder="Nome do seu negócio">
+      <mat-error *ngIf="formCompany.controls.name.hasError('required')">Nome é obrigatório</mat-error>
+      <mat-error *ngIf="formCompany.controls.name.hasError('minlength')"> Digite pelo menos 3 caracteres.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tem CPNJ?</mat-label>
+      <input matInput formControlName="document" mask="CPF_CNPJ" placeholder="CPNJ (Opcional)">
+    </mat-form-field>
+
+    <mat-checkbox>Minha empresa é MEI.</mat-checkbox>
+
+    <div class="wrapper-button">
+      <button mat-flat-button class="button" type="button" (click)="back()">Volta</button>
+      <button mat-flat-button class="button" type="button" color="primary" (click)="onSubmit()">Próximo</button>
+    </div>
+  </form>
+
+</div>
